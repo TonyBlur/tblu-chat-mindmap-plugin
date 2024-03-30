@@ -4,11 +4,11 @@
 
 <img height="120" src="https://registry.npmmirror.com/@lobehub/assets-emoji/1.3.0/files/assets/puzzle-piece.webp">
 <img height="120" src="https://gw.alipayobjects.com/zos/kitchen/qJ3l3EPsdW/split.svg">
-<img height="120" src="https://registry.npmmirror.com/@lobehub/assets-emoji-anim/1.0.0/files/assets/rocket.webp">
+<img height="120" src="https://registry.npmmirror.com/@lobehub/assets-emoji-anim/1.0.0/files/assets/brain.webp">
 
-<h1>Plugin Template<br/><sup>LobeChat Plugin</sup></h1>
+<h1>Mindmap<br/><sup>LobeChat Plugin</sup></h1>
 
-This is the plugin template for LobeChat plugin development
+A LobeChat plugin that can generate mind maps based on user input.
 
 [![][🤯-🧩-lobehub-shield]][🤯-🧩-lobehub-link]
 [![][github-release-shield]][github-release-link]

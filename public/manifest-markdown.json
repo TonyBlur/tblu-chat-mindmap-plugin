@@ -2,7 +2,7 @@
   "$schema": "../node_modules/@lobehub/chat-plugin-sdk/schema.json",
   "api": [
     {
-      "url": "http://localhost:3400/api/clothes-md",
+      "url": "http://localhost:3400/api/mindmap-md",
       "name": "recommendClothes",
       "description": "根据用户的心情，给用户推荐他有的衣服",
       "parameters": {

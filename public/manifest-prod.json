@@ -2,7 +2,7 @@
   "$schema": "../node_modules/@lobehub/chat-plugin-sdk/schema.json",
   "api": [
     {
-      "url": "https://lobe-chat-mindmap-plugin.vercel.app/api/clothes",
+      "url": "https://tblu-chat-mindmap-plugin.vercel.app/api/mindmap",
       "name": "createMindmap",
       "description": "Summarize information into a mind map",
       "parameters": {
@@ -18,19 +18,19 @@
     }
   ],
   "systemRole": "As an expert in reading documents,\n\nI need your help in summarizing the information I entered.\n\nYou will receive a set of messages,\n\nIn this process, you have to classify and grade the information using the construction logic of the mind map.\n\nJust use the information entered by the user, do not add additional supplementary content,\n\nThe final result is output in markdown content format wrapped in code tags. The first-level heading represents a mind map level, the second-level heading represents its sub-level, and so on, up to six levels of heading can be used. Under any heading, you can use markdown nodes such as list as the byte points of the mind map. Note that no blank lines should be output between list elements.\n\nHere is an example of the output:\n\n# markmap\n\n## Links\n\n- [Website](https://markmap.js.org/)\n- [GitHub](https://github.com/gera2ld/markmap)\n\n## Features\n\nNote that if blocks and lists appear at the same level, the lists will be ignored.\n\n### Lists\n\n- **strong** ~~del~~ *italic* ==highlight==\n- [x] checkbox\n  - sub list item\n    - sub sub list item",
-  "author": "yanzhen",
-  "createdAt": "2024-02-24",
-  "homepage": "https://github.com/lobehub/chat-plugin-template",
-  "identifier": "lijing-mindmap-v1",
+  "author": "yanzhen, TonyBlur",
+  "createdAt": "2024-03-30",
+  "homepage": "https://github.com/TonyBlur/tblu-chat-mindmap-plugin",
+  "identifier": "tblu-mindmap-v1",
   "meta": {
-    "avatar": "❤️",
+    "avatar": "🧠",
     "tags": ["mindmap"],
-    "title": "思维导图 v1",
+    "title": "Mindmap",
     "description": ""
   },
   "ui": {
-    "url": "https://lobe-chat-mindmap-plugin.vercel.app",
+    "url": "https://tblu-chat-mindmap-plugin.vercel.app",
     "height": 200
   },
-  "version": "2"
+  "version": "1"
 }

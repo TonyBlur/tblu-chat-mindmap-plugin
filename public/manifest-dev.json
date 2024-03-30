@@ -2,7 +2,7 @@
   "$schema": "../node_modules/@lobehub/chat-plugin-sdk/schema.json",
   "api": [
     {
-      "url": "http://localhost:3400/api/clothes",
+      "url": "http://localhost:3400/api/mindmap",
       "name": "createMindmap",
       "description": "将信息总结为思维导图",
       "parameters": {
@@ -27,11 +27,11 @@
     "avatar": "🧠",
     "tags": ["mindmap"],
     "title": "Mindmap",
-    "description": ""
+    "description": "将内容根据 markdown 格式约定，创建出思维导图"
   },
   "ui": {
     "url": "http://localhost:3400",
     "height": 200
   },
-  "version": "2"
+  "version": "1"
 }
