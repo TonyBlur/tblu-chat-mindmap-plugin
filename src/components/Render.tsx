@@ -1,4 +1,4 @@
-import { Button, Card } from 'antd';
+import { Card } from 'antd';
 import LZString from 'lz-string';
 import { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
@@ -6,6 +6,7 @@ import { Flexbox } from 'react-layout-kit';
 import { ResponseData } from '@/type';
 
 const Render = memo<Partial<ResponseData>>(({ content }) => {
+  const url = `https://markmap-renderer.vercel.app/?content=${LZString.compressToEncodedURIComponent(content || '')}`;
   return (
     <Flexbox width="100%">
       {/* <Flexbox distribution={'space-between'} horizontal>
@@ -24,14 +25,13 @@ const Render = memo<Partial<ResponseData>>(({ content }) => {
       </Flexbox> */}
       <Card>
         思维导图已生成
-        <Button
-          href={`https://markmap-renderer.vercel.app/?content=${LZString.compressToEncodedURIComponent(content || '')}`}
-          // style={{ marginLeft: '1rem' }}
-          target="_blank"
-          type="link"
+        <iframe 
+          src={url}
+          style={{ width: '100%', height: '100%' }} // 你可以根据需要调整宽度和高度
+          frameBorder="0"
         >
-          点击链接查看
-        </Button>
+          您的浏览器不支持iframe
+        </iframe>
       </Card>
     </Flexbox>
   );
