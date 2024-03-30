@@ -1,4 +1,3 @@
-import { Card } from 'antd';
 import LZString from 'lz-string';
 import { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
@@ -24,12 +23,13 @@ const Render = memo<Partial<ResponseData>>(({ content }) => {
         </Flexbox>
       </Flexbox> */}
       <iframe 
-          frameBorder="0"
-          src={url}
-          style={{ 
-            height: '100vh', 
-            width: '100%'
-          }}
+        border-radius="8px"
+        frameBorder="0"
+        src={url}
+        style={{ 
+          height: '100vh', 
+          width: '100%'
+        }}
         >
           您的浏览器不支持iframe
       </iframe>
