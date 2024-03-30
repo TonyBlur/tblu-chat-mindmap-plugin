@@ -10,15 +10,12 @@ const Render = memo<Partial<ResponseData>>(({ content }) => {
   useEffect(() => {
     if (containerRef.current) {
       // Create a new markmap in the container
-      const viewer = Markmap.create(containerRef.current, null, content || '');
-
-      // You might want to save the viewer instance if you need to interact with it later
-      // For example, you can update the markmap content by calling viewer.setData()
+      Markmap.create(containerRef.current, null, content || '');
     }
   }, [content]);
 
   return (
-    <Flexbox width="100%" ref={containerRef} />
+    <Flexbox ref={containerRef} width="100%" />
   );
 });
 
