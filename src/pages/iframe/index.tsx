@@ -4,7 +4,7 @@ import { memo, useEffect, useState } from 'react';
 import { Center } from 'react-layout-kit';
 
 import Data from '@/components/Render';
-import { fetchClothes } from '@/services/clothes';
+import { fetchMindmap } from '@/services/mindmap';
 import { ResponseData } from '@/type';
 
 const Render = memo(() => {
@@ -21,14 +21,14 @@ const Render = memo(() => {
 
   useEffect(() => {
     lobeChat.getPluginPayload().then((payload) => {
-      if (payload.name === 'recommendClothes') {
+      if (payload.name === 'recommendMindmap') {
         setPayload(payload.arguments);
       }
     });
   }, []);
 
   const fetchData = async () => {
-    const data = await fetchClothes(payload);
+    const data = await fetchMindmap(payload);
     setData(data);
     lobeChat.setPluginMessage(data);
   };
@@ -44,7 +44,7 @@ const Render = memo(() => {
         }}
         type={'primary'}
       >
-        查询衣物
+        查询
       </Button>
     </Center>
   );
