@@ -1,7 +1,7 @@
 import { memo, useEffect, useRef } from 'react';
 import { Flexbox } from 'react-layout-kit';
 import { Markmap } from 'markmap-view';
-import { transform } from 'markmap-lib';
+import { Transformer } from 'markmap-lib';
 
 import { ResponseData } from '@/type';
 
@@ -10,8 +10,13 @@ const Render = memo<Partial<ResponseData>>(({ content }) => {
 
   useEffect(() => {
     if (containerRef.current) {
-      const data = transform(content || '');
+      // Create a transformer instance
+      const transformer = new Transformer();
 
+      // Transform the Markdown content to a Markmap data structure
+      const data = transformer.transform(content || '');
+
+      // Create a new markmap in the container
       Markmap.create(containerRef.current, {}, data);
     }
   }, [content]);
