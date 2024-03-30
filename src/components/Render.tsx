@@ -6,7 +6,8 @@ import { Transformer } from 'markmap-lib';
 import { ResponseData } from '@/type';
 
 const Render = memo<Partial<ResponseData>>(({ content }) => {
-  const containerRef = useRef(null);
+  // Specify the type of the ref
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (containerRef.current) {
