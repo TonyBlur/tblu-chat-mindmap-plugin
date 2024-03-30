@@ -11,6 +11,9 @@ const Render = memo<Partial<ResponseData>>(({ content }) => {
 
   useEffect(() => {
     if (containerRef.current) {
+      // Clear the container
+      containerRef.current.innerHTML = '';
+
       // Create a transformer instance
       const transformer = new Transformer();
 
