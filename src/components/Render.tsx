@@ -56,7 +56,7 @@ const Render = memo<Partial<ResponseData>>(({ content }) => {
   
   return (
     <Flexbox>
-      <Card ref={containerRef} onDoubleClick={downloadSvg}></Card>
+      <Card onDoubleClick={downloadSvg} ref={containerRef}></Card>
     </Flexbox>
   );
 });
