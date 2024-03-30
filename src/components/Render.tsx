@@ -1,24 +1,31 @@
-import LZString from 'lz-string';
-import { memo } from 'react';
-// import { Flexbox } from 'react-layout-kit';
+import { memo, useEffect, useRef } from 'react';
+import { Flexbox } from 'react-layout-kit';
+import { transform, createViewer } from 'markmap-lib';
+import { loadPlugins } from 'markmap-view';
 
 import { ResponseData } from '@/type';
 
 const Render = memo<Partial<ResponseData>>(({ content }) => {
-  const url = `https://markmap-renderer.vercel.app/?content=${LZString.compressToEncodedURIComponent(content || '')}`;
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    if (containerRef.current) {
+      // Transform the markdown content into markmap data
+      const { root, features } = transform(content || '');
+
+      // Load necessary plugins based on the features used in the content
+      const { Viewer } = loadPlugins(features);
+
+      // Create a new markmap in the container
+      const viewer = new Viewer(containerRef.current, null, root);
+
+      // You might want to save the viewer instance if you need to interact with it later
+      // For example, you can update the markmap content by calling viewer.setData()
+    }
+  }, [content]);
 
   return (
-    <iframe 
-      frameBorder="0"
-      src={url}
-      style={{ 
-        borderRadius: '8px',
-        height: '100vh', 
-        width: '100%'
-      }}
-      >
-        您的浏览器不支持iframe
-    </iframe>
+    <Flexbox width="100%" ref={containerRef} />
   );
 });
 
