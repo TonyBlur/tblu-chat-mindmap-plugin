@@ -28,35 +28,20 @@ const Render = memo<Partial<ResponseData>>(({ content }) => {
       containerRef.current.append(svg);
 
       // Create a new markmap in the SVG with the root of the transformed data
-      Markmap.create(svg, {}, result.root);
+      const markmap = Markmap.create(svg, {}, result.root);
 
       // Add styles to the SVG
       svg.style.width = '100%';
       svg.style.height = '96vh';
+
+      // Adjust the view to fit all nodes
+      markmap.fit();
     }
   }, [content]);
-
-  // Function to download the SVG file
-  const downloadSvg = () => {
-    if (containerRef.current) {
-      const svg = containerRef.current.querySelector('svg');
-      if (svg) {
-        const serializer = new XMLSerializer();
-        const source = serializer.serializeToString(svg);
-        const url = "data:image/svg+xml;charset=utf-8,"+encodeURIComponent(source);
-        const downloadLink = document.createElement("a");
-        downloadLink.href = url;
-        downloadLink.download = "markmap.svg";
-        document.body.append(downloadLink); // Use Node#append() instead of Node#appendChild()
-        downloadLink.click();
-        downloadLink.remove(); // Use childNode.remove() instead of parentNode.removeChild(childNode)
-      }
-    }
-  };
   
   return (
     <Flexbox>
-      <Card onDoubleClick={downloadSvg} ref={containerRef}></Card>
+      <Card ref={containerRef}></Card>
     </Flexbox>
   );
 });
