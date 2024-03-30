@@ -4,6 +4,7 @@ import { Markmap } from 'markmap-view';
 import { Transformer } from 'markmap-lib';
 
 import { ResponseData } from '@/type';
+import { Card } from 'antd';
 
 const Render = memo<Partial<ResponseData>>(({ content }) => {
   // Specify the type of the ref
@@ -34,7 +35,7 @@ const Render = memo<Partial<ResponseData>>(({ content }) => {
       svg.style.height = '96vh';
     }
   }, [content]);
-  
+
   // Function to download the SVG file
   const downloadSvg = () => {
     if (containerRef.current) {
@@ -52,14 +53,10 @@ const Render = memo<Partial<ResponseData>>(({ content }) => {
       }
     }
   };
-
+  
   return (
-    <Flexbox 
-      height="100%" 
-      ref={containerRef} 
-      style={{ border: '1px solid #333333', borderRadius: '8px', position: 'relative' }} // Add border style
-      width="100%" // Sort props alphabetically
-    >
+    <Flexbox>
+      <Card ref={containerRef} >
       <button 
         onClick={downloadSvg} 
         style={{ bottom: '10px', position: 'absolute', right: '10px' }} // Sort object keys in ascending order
@@ -67,6 +64,7 @@ const Render = memo<Partial<ResponseData>>(({ content }) => {
       >
         Download SVG
       </button>
+      </Card>
     </Flexbox>
   );
 });
