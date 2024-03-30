@@ -19,7 +19,7 @@ const Render = memo<Partial<ResponseData>>(({ content }) => {
       // Create a new markmap in the container with the root of the transformed data
       Markmap.create(containerRef.current, {}, result.root);
 
-      // Add some styles to the SVG
+      // Add styles to the SVG
       const svg = containerRef.current.querySelector('svg');
       if (svg) {
         svg.style.width = '100%';
@@ -29,7 +29,7 @@ const Render = memo<Partial<ResponseData>>(({ content }) => {
   }, [content]);
 
   return (
-    <Flexbox ref={containerRef} width="100%" height="100%" />
+    <Flexbox height="100%" ref={containerRef} width="100%" />
   );
 });
 
