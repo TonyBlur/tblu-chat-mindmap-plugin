@@ -14,10 +14,10 @@ const Render = memo<Partial<ResponseData>>(({ content }) => {
       const transformer = new Transformer();
 
       // Transform the Markdown content to a Markmap data structure
-      const data = transformer.transform(content || '');
+      const result = transformer.transform(content || '');
 
-      // Create a new markmap in the container
-      Markmap.create(containerRef.current, {}, data);
+      // Create a new markmap in the container with the root of the transformed data
+      Markmap.create(containerRef.current, {}, result.root);
     }
   }, [content]);
 
