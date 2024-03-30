@@ -17,15 +17,16 @@ const Render = memo<Partial<ResponseData>>(({ content }) => {
       // Transform the Markdown content to a Markmap data structure
       const result = transformer.transform(content || '');
 
-      // Create a new markmap in the container with the root of the transformed data
-      Markmap.create(containerRef.current, {}, result.root);
+      // Create an SVG element in the container
+      const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      containerRef.current.appendChild(svg);
+
+      // Create a new markmap in the SVG with the root of the transformed data
+      Markmap.create(svg, {}, result.root);
 
       // Add styles to the SVG
-      const svg = containerRef.current.querySelector('svg');
-      if (svg) {
-        svg.style.width = '100%';
-        svg.style.height = '100%';
-      }
+      svg.style.width = '100%';
+      svg.style.height = '100%';
     }
   }, [content]);
 
