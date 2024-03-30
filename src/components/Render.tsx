@@ -31,12 +31,42 @@ const Render = memo<Partial<ResponseData>>(({ content }) => {
 
       // Add styles to the SVG
       svg.style.width = '100%';
-      svg.style.height = '100%';
+      svg.style.height = '96vh';
     }
   }, [content]);
 
+  // Function to download the SVG file
+  const downloadSvg = () => {
+    if (containerRef.current) {
+      const svg = containerRef.current.querySelector('svg');
+      if (svg) {
+        const serializer = new XMLSerializer();
+        const source = serializer.serializeToString(svg);
+        const url = "data:image/svg+xml;charset=utf-8,"+encodeURIComponent(source);
+        const downloadLink = document.createElement("a");
+        downloadLink.href = url;
+        downloadLink.download = "markmap.svg";
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+      }
+    }
+  };
+
   return (
-    <Flexbox height="100%" ref={containerRef} width="100%" />
+    <Flexbox 
+      height="100%" 
+      ref={containerRef} 
+      width="100%" 
+      style={{ border: '1px solid #333333', borderRadius: '8px', position: 'relative' }} // Add border style
+    >
+      <button 
+        onClick={downloadSvg} 
+        style={{ position: 'absolute', right: '10px', bottom: '10px' }} // Position the button at the bottom right corner
+      >
+        Download SVG
+      </button>
+    </Flexbox>
   );
 });
 

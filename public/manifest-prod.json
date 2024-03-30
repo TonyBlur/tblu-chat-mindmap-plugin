@@ -30,7 +30,7 @@
   },
   "ui": {
     "url": "https://tblu-chat-mindmap-plugin.vercel.app",
-    "height": 200
+    "height": 400
   },
   "version": "1"
 }
