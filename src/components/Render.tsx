@@ -23,10 +23,10 @@ const Render = memo<Partial<ResponseData>>(({ content }) => {
         </Flexbox>
       </Flexbox> */}
       <iframe 
-        border-radius="8px"
         frameBorder="0"
         src={url}
         style={{ 
+          borderRadius: '8px',
           height: '100vh', 
           width: '100%'
         }}
