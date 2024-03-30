@@ -19,7 +19,9 @@ const Render = memo<Partial<ResponseData>>(({ content }) => {
 
       // Create an SVG element in the container
       const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-      containerRef.current.appendChild(svg);
+      
+      // Use Node#append() instead of Node#appendChild()
+      containerRef.current.append(svg);
 
       // Create a new markmap in the SVG with the root of the transformed data
       Markmap.create(svg, {}, result.root);
