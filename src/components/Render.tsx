@@ -34,7 +34,7 @@ const Render = memo<Partial<ResponseData>>(({ content }) => {
       svg.style.height = '96vh';
     }
   }, [content]);
-
+  
   // Function to download the SVG file
   const downloadSvg = () => {
     if (containerRef.current) {
@@ -46,9 +46,9 @@ const Render = memo<Partial<ResponseData>>(({ content }) => {
         const downloadLink = document.createElement("a");
         downloadLink.href = url;
         downloadLink.download = "markmap.svg";
-        document.body.appendChild(downloadLink);
+        document.body.append(downloadLink); // Use Node#append() instead of Node#appendChild()
         downloadLink.click();
-        document.body.removeChild(downloadLink);
+        downloadLink.remove(); // Use childNode.remove() instead of parentNode.removeChild(childNode)
       }
     }
   };
@@ -57,12 +57,13 @@ const Render = memo<Partial<ResponseData>>(({ content }) => {
     <Flexbox 
       height="100%" 
       ref={containerRef} 
-      width="100%" 
       style={{ border: '1px solid #333333', borderRadius: '8px', position: 'relative' }} // Add border style
+      width="100%" // Sort props alphabetically
     >
       <button 
         onClick={downloadSvg} 
-        style={{ position: 'absolute', right: '10px', bottom: '10px' }} // Position the button at the bottom right corner
+        style={{ bottom: '10px', position: 'absolute', right: '10px' }} // Sort object keys in ascending order
+        type="button" // Add an explicit type attribute for button
       >
         Download SVG
       </button>
