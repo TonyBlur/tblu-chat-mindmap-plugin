@@ -27,7 +27,7 @@ const Render = memo<Partial<ResponseData>>(({ content }) => {
         思维导图已生成
         <iframe 
           src={url}
-          style={{ width: '100%', height: '100%' }} // 你可以根据需要调整宽度和高度
+          style={{ height: '100%', width: '100%' }} // 你可以根据需要调整宽度和高度
           frameBorder="0"
         >
           您的浏览器不支持iframe
