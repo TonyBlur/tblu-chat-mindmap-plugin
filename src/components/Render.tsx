@@ -23,19 +23,16 @@ const Render = memo<Partial<ResponseData>>(({ content }) => {
           ))}
         </Flexbox>
       </Flexbox> */}
-      <Card style={{ padding: 0 }}>
-        <iframe 
+      <iframe 
           frameBorder="0"
           src={url}
           style={{ 
             height: '100vh', 
-            overflow: 'hidden',
             width: '100%'
           }}
         >
           您的浏览器不支持iframe
-        </iframe>
-      </Card>
+      </iframe>
     </Flexbox>
   );
 });
