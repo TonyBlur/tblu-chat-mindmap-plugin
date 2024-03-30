@@ -9,8 +9,7 @@ const Render = memo<Partial<ResponseData>>(({ content }) => {
 
   useEffect(() => {
     if (containerRef.current) {
-      // Create a new markmap in the container
-      Markmap.create(containerRef.current, null, content || '');
+      Markmap.create(containerRef.current, {}, content || '');
     }
   }, [content]);
 
