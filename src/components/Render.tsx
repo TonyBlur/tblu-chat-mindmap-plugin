@@ -56,15 +56,7 @@ const Render = memo<Partial<ResponseData>>(({ content }) => {
   
   return (
     <Flexbox>
-      <Card ref={containerRef} >
-      <button 
-        onClick={downloadSvg} 
-        style={{ bottom: '10px', position: 'absolute', right: '10px' }} // Sort object keys in ascending order
-        type="button" // Add an explicit type attribute for button
-      >
-        Download SVG
-      </button>
-      </Card>
+      <Card ref={containerRef} onDoubleClick={downloadSvg}></Card>
     </Flexbox>
   );
 });
