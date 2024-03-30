@@ -23,12 +23,15 @@ const Render = memo<Partial<ResponseData>>(({ content }) => {
           ))}
         </Flexbox>
       </Flexbox> */}
-      <Card>
-        思维导图已生成
+      <Card style={{ padding: 0 }}>
         <iframe 
           frameBorder="0"
           src={url}
-          style={{ height: '100%', width: '100%' }} // 可以根据需要调整宽度和高度
+          style={{ 
+            height: '100vh', 
+            overflow: 'hidden',
+            width: '100%'
+          }}
         >
           您的浏览器不支持iframe
         </iframe>
