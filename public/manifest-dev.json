@@ -4,10 +4,11 @@
     {
       "url": "http://localhost:3400/api/mindmap",
       "name": "createMindmap",
-      "description": "根据 markdown 格式约定，生成思维导图或将已有信息总结为思维导图",
+      "description": "生成思维导图或将已有信息总结为思维导图",
       "parameters": {
         "properties": {
           "content": {
+            "description": "根据 markdown 格式约定，生成思维导图或将已有信息总结为思维导图",
             "type": "string"
           }
         },
