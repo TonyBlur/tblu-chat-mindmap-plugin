@@ -21,7 +21,7 @@ const Render = memo(() => {
 
   useEffect(() => {
     lobeChat.getPluginPayload().then((payload) => {
-      if (payload.name === 'recommendMindmap') {
+      if (payload.name === 'createMindmap') {
         setPayload(payload.arguments);
       }
     });
