@@ -4,7 +4,7 @@
     {
       "url": "http://localhost:3400/api/mindmap",
       "name": "createMindmap",
-      "description": "将信息总结为思维导图",
+      "description": "生成思维导图或将已有信息总结为思维导图",
       "parameters": {
         "properties": {
           "content": {
