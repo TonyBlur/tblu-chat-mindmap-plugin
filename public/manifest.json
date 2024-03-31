@@ -8,7 +8,7 @@
       "parameters": {
         "properties": {
           "content": {
-            "description": "Generate mind maps or summarize existing information into agreed markdown format",
+            "description": "Generate or summarize existing information into a agreed markdown format mind map",
             "type": "string"
           }
         },
