@@ -4,7 +4,7 @@
     {
       "url": "https://tblu-chat-mindmap-plugin.vercel.app/api/mindmap",
       "name": "createMindmap",
-      "description": "Generate a mind map and its contents or summarize existing information as a mind map",
+      "description": "Summarize existing information as a mind map or generate a mind map with its contents",
       "parameters": {
         "properties": {
           "content": {
