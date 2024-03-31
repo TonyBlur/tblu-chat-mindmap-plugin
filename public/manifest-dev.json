@@ -4,11 +4,10 @@
     {
       "url": "http://localhost:3400/api/mindmap",
       "name": "createMindmap",
-      "description": "生成思维导图或将已有信息总结为思维导图",
       "parameters": {
         "properties": {
           "content": {
-            "description": "将内容根据 markdown 格式约定，创建出思维导图",
+            "description": "根据 markdown 格式约定，生成思维导图或将已有信息总结为思维导图",
             "type": "string"
           }
         },
@@ -27,7 +26,7 @@
     "avatar": "🧠",
     "tags": ["mindmap"],
     "title": "Mindmap",
-    "description": "将内容根据 markdown 格式约定，创建出思维导图"
+    "description": "生成思维导图或将已有信息总结为思维导图"
   },
   "ui": {
     "url": "http://localhost:3400",
