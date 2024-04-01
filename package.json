@@ -1,6 +1,6 @@
 {
   "name": "lobe-chat-mindmap-plugin",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "private": true,
   "description": "This is the plugin template for LobeChat plugin development",
   "homepage": "https://github.com/lobehub/chat-plugin-template",
@@ -60,12 +60,12 @@
     "dayjs": "^1",
     "express": "^4.19.2",
     "lz-string": "^1.5.0",
+    "markmap-lib": "^0.16.1",
+    "markmap-view": "^0.16.0",
     "next": "13.4.7",
     "react": ">=18",
     "react-dom": ">=18",
-    "react-layout-kit": "^1",
-    "markmap-view": "^0.16.0",
-    "markmap-lib": "^0.16.1"
+    "react-layout-kit": "^1"
   },
   "devDependencies": {
     "@commitlint/cli": "^18",
