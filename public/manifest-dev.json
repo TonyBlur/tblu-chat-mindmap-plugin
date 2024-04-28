@@ -23,7 +23,7 @@
   "homepage": "https://github.com/TonyBlur/tblu-chat-mindmap-plugin",
   "identifier": "tblu-mindmap-v1",
   "meta": {
-    "avatar": "🧠",
+    "avatar": "💡",
     "tags": ["mindmap"],
     "title": "Mindmap",
     "description": "生成思维导图及其内容或将已有信息总结为思维导图"

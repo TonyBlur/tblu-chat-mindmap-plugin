@@ -4,7 +4,7 @@
 
 <img height="120" src="https://registry.npmmirror.com/@lobehub/assets-emoji/1.3.0/files/assets/puzzle-piece.webp">
 <img height="120" src="https://gw.alipayobjects.com/zos/kitchen/qJ3l3EPsdW/split.svg">
-<img height="120" src="https://registry.npmmirror.com/@lobehub/assets-emoji-anim/1.0.0/files/assets/brain.webp">
+<img height="120" src="https://registry.npmmirror.com/@lobehub/assets-emoji-anim/1.0.0/files/assets/light-bulb.webp">
 
 <h1>Mindmap<br/><sup>LobeChat Plugin</sup></h1>
 
@@ -57,10 +57,10 @@ A LobeChat plugin that can generate mind maps based on user input.
 
 ## 🤯 Usage
 
-> [!IMPORTANT]\
+> \[!IMPORTANT]\
 > See detail on [📘 Template usage](https://chat-plugin-sdk.lobehub.com/guides/template)
 
-> [!Note]\
+> \[!Note]\
 > Plugins provide a means to extend the [Function Calling][fc-link] capabilities of LobeChat. They can be used to introduce new function calls, and even new ways to render message results. If you are interested in plugin development, please refer to our [📘 Plugin Development Guide](https://github.com/lobehub/lobe-chat/wiki/Plugin-Development) in the Wiki.
 >
 > - [@lobehub/lobe-chat-plugins][lobe-chat-plugins]: This is the plugin index for LobeChat. It accesses index.json from this repository to display a list of available plugins for LobeChat to the user.
